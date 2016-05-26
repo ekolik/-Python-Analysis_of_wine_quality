@@ -1,0 +1,85 @@
+Red
+1599
+12
+['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol', 'quality']
+    fixed acidity  volatile acidity  citric acid  residual sugar
+0             7.4              0.70         0.00             1.9
+1             7.8              0.88         0.00             2.6
+2             7.8              0.76         0.04             2.3
+3            11.2              0.28         0.56             1.9
+4             7.4              0.70         0.00             1.9
+5             7.4              0.66         0.00             1.8
+6             7.9              0.60         0.06             1.6
+7             7.3              0.65         0.00             1.2
+8             7.8              0.58         0.02             2.0
+9             7.5              0.50         0.36             6.1
+10            6.7              0.58         0.08             1.8
+
+[11 rows x 4 columns]
+
+
+White
+4898
+12
+['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol', 'quality']
+    fixed acidity  volatile acidity  citric acid  residual sugar
+0             7.0              0.27         0.36           20.70
+1             6.3              0.30         0.34            1.60
+2             8.1              0.28         0.40            6.90
+3             7.2              0.23         0.32            8.50
+4             7.2              0.23         0.32            8.50
+5             8.1              0.28         0.40            6.90
+6             6.2              0.32         0.16            7.00
+7             7.0              0.27         0.36           20.70
+8             6.3              0.30         0.34            1.60
+9             8.1              0.22         0.43            1.50
+10            8.1              0.27         0.41            1.45
+
+[11 rows x 4 columns]
+
+
+Red
+This is the frequency distribution of the wines' quality.
+quality
+3           0.625391
+4           3.314572
+5          42.589118
+6          39.899937
+7          12.445278
+8           1.125704
+dtype: float64
+
+
+
+White
+This is the frequency distribution of the wines' quality.
+quality
+3           0.408330
+4           3.327889
+5          29.746835
+6          44.875459
+7          17.966517
+8           3.572887
+9           0.102082
+dtype: float64
+
+
+
+Red
+This is the quartile split of the wines' quality. I-st column contains the intervals of wines' quality;
+II-nd - the number of wine samples with the quality in the corresponding interval.
+quality_quart
+(5, 6]           638
+(6, 8]           217
+[3, 5]           744
+dtype: int64
+
+
+White
+This is the quartile split of the wines' quality. I-st column contains the intervals of wines' quality;
+II-nd - the number of wine samples with the quality in the corresponding interval.
+quality_quart
+(5, 6]           2198
+(6, 9]           1060
+[3, 5]           1640
+dtype: int64
