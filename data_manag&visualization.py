@@ -54,3 +54,16 @@ def countplots(wine_set):
     plt.show()
 
 call(countplots)
+
+
+def factorplots(wine_set):
+    seaborn.factorplot(x="quality", y="alcohol", data=wine_set, kind="strip")
+    plt.xlabel("Quality level of wine, 0-10 scale")
+    plt.ylabel("Alcohol level in wine, % ABV")
+    if wine_set.equals(red):
+        plt.title("Alcohol percent in each level of red wine's quality")
+    else:
+        plt.title("Alcohol percent in each level of white wine's quality")
+    plt.show()
+
+call(factorplots)
