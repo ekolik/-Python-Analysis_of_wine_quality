@@ -27,7 +27,7 @@ By the means of data management, visualization, analysis, regression modeling, a
 The work flows through the following sections:
 
 1. [Data management and visualization](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Data_management_and_visualization.md)
-2. [Data analysis]()
+2. [Data analysis](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Data_analysis.md)
 3. [Regression modeling]()
 4. [Machine learning]()
 
