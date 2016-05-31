@@ -15,4 +15,4 @@ To examine the data a little further, I've created the factorplots that show the
 
 There are the [code](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/data_manag%26visualization.py) and its [output](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/data_manag_output.txt) for this step in the project. 
 
-The work is continued in the [Data analysis]() section.
+The work is continued in the [Data analysis](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Data_analysis.md) section.
