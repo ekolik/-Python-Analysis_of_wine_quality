@@ -1,6 +1,10 @@
 import pandas as pd
 import statsmodels.formula.api as smf
 import statsmodels.stats.multicomp as multi
+import scipy.stats
+import numpy as np
+import seaborn
+import matplotlib.pyplot as plt
 
 red = pd.read_csv('winequality-red.csv', low_memory=False, sep=';')
 white = pd.read_csv('winequality-white.csv', low_memory=False, sep=';')
@@ -57,5 +61,20 @@ def anova(wine_set):
     res1 = mc1.tukeyhsd()
     print(res1.summary())
 
-print('----------------Hypothesis Testing and ANOVA------------------------')
-call(anova)
+# print('----------------Hypothesis Testing and ANOVA------------------------')
+# call(anova)
+
+
+
+# --------------------------------------Pearson Correlation---------------------------
+def pearson(wine_set):
+    scat1 = seaborn.regplot(x="density", y="residual_sugar", fit_reg=True, data=wine_set)
+    plt.xlabel("Density of wine")
+    plt.ylabel("Residual sugar in wine, gram")
+    plt.title("Association between wine's density and residual sugar")
+    plt.show()
+
+    print(scipy.stats.pearsonr(wine_set['density'], wine_set["residual_sugar"]))
+
+print('----------------Pearson Correlation------------------------')
+call(pearson)
