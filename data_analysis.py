@@ -76,5 +76,40 @@ def pearson(wine_set):
 
     print(scipy.stats.pearsonr(wine_set['density'], wine_set["residual_sugar"]))
 
-print('----------------Pearson Correlation------------------------')
-call(pearson)
+# print('----------------Pearson Correlation------------------------')
+# call(pearson)
+
+
+# -----------------------------------------Exploring Statistical Interactions------------------
+def explore(wine_set):
+    low = wine_set[wine_set['quality'] <= 5]
+    medium = wine_set[(wine_set['quality'] == 6) | (wine_set['quality'] == 7)]
+    high = wine_set[wine_set['quality'] > 7]
+
+    print('association between wine`s density and residual sugar for wines \nof `low` quality')
+    print(scipy.stats.pearsonr(low['density'], low["residual_sugar"]))
+    print('\nof `medium` quality')
+    print(scipy.stats.pearsonr(medium['density'], medium["residual_sugar"]))
+    print('\nof `high` quality')
+    print(scipy.stats.pearsonr(high['density'], high["residual_sugar"]))
+
+    scat0 = seaborn.regplot(x="density", y="residual_sugar", fit_reg=True, data=low)
+    plt.xlabel("Density of wine")
+    plt.ylabel("Residual sugar in wine, gram")
+    plt.title("Association between wine's density and residual sugar for wines of `low` quality")
+    plt.show()
+
+    scat0 = seaborn.regplot(x="density", y="residual_sugar", fit_reg=True, data=medium)
+    plt.xlabel("Density of wine")
+    plt.ylabel("Residual sugar in wine, gram")
+    plt.title("Association between wine's density and residual sugar for wines of `medium` quality")
+    plt.show()
+
+    scat0 = seaborn.regplot(x="density", y="residual_sugar", fit_reg=True, data=high)
+    plt.xlabel("Density of wine")
+    plt.ylabel("Residual sugar in wine, gram")
+    plt.title("Association between wine's density and residual sugar for wines of `high` quality")
+    plt.show()
+
+print('----------------Exploring Statistical Interactions------------------------')
+call(explore)

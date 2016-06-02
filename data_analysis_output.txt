@@ -117,3 +117,28 @@ Red
 
 White
 (0.8389664549045891, 0.0)
+
+
+----------------Exploring Statistical Interactions------------------------
+Red
+association between wine`s density and residual sugar for wines
+of `low` quality
+(0.40512747741473654, 9.32999030472877e-31)
+
+of `medium` quality
+(0.33017251719442109, 9.7543481687465744e-23)
+
+of `high` quality
+(0.57972313228749361, 0.011679205341894044)
+
+
+White
+association between wine`s density and residual sugar for wines
+of `low` quality
+(0.87966448958291621, 0.0)
+
+of `medium` quality
+(0.84584199412009509, 0.0)
+
+of `high` quality
+(0.82108702081055551, 3.2743806268817413e-45)
