@@ -20,4 +20,20 @@ In addition, I make scatter-plots of these variables to check the linearity of t
 **White wine**:
 ![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density.png)
 
-Both plots show somewhat positive but not linear correlation. In fact, the red wine set has too many "outliers" from the linear pattern, and the samples in the white wine set form a "blob", not a line.
+Both plots show somewhat positive but not linear correlation. In fact, the red wine set has too many "outliers" from the linear pattern, and the samples in the white wine set form a "blob", not a line. The correlation is further explored in the following paragraph.
+
+### Exploring Statistical Interactions
+
+Here, I check if the association between the density of wine and the amount of residual sugar in wine is linear for wine within one quality range. In other words, I divide the data into 3 groups by the wine quality marks and then calculate a Pearson correlation coefficient (`density`, the quantitative explanatory variable, vs `residual sugar`, the quantitative response variable) for each group. As before, I define quality marks of wine in the following way: *high* if `quality` rank is greater than or equal to `8`, *medium* if `quality` rank is equal to `6`or `7`, and *low* if `quality` rank is less than or equal to `5`. I perform the described above procedure for both wine sets separately.
+
+The [results](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/data_analysis_output.txt) of the calculations show that there is a positive linear relationship between the variables for each group in each wine set. This indicate that the quality of wine doesn't influence the relationship between the density of wine and the residual sugar in it. However, the look at the scatter-plots for each of the groups (shown below) reflects the observations made in the previous paragraph: the correlation is positive but not exactly linear.
+
+**Red wine**:
+![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/red_sugar_vs_density_for_low.png)
+![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/red_sugar_vs_density_for_medium.png)
+![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/red_sugar_vs_density_for_high.png)
+
+**White wine**:
+![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density_for_low.png)
+![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density_for_medium.png)
+![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density_for_high.png)
