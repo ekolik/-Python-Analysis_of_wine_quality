@@ -37,3 +37,5 @@ The [results](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/ma
 ![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density_for_low.png)
 ![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density_for_medium.png)
 ![](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/white_sugar_vs_density_for_high.png)
+
+The work is continued in the [Regression modeling](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Regression_modeling.md) section.
