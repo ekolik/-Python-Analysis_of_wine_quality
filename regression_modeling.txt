@@ -1,0 +1,62 @@
+Red
+mean of the volatile acidity variable =  0.527820512821
+mean of the volatile acidity variable after normalization =  -3.21020397396e-16
+
+OLS regression model for the association between the amount of volatile acidity in wine and the quality of wine:
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.153
+Model:                            OLS   Adj. R-squared:                  0.152
+Method:                 Least Squares   F-statistic:                     287.4
+Date:                Mon, 06 Jun 2016   Prob (F-statistic):           2.05e-59
+Time:                        15:43:15   Log-Likelihood:                -1794.3
+No. Observations:                1599   AIC:                             3593.
+Df Residuals:                    1597   BIC:                             3603.
+Df Model:                           1
+Covariance Type:            nonrobust
+====================================================================================
+                       coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------------
+Intercept            5.6360      0.019    303.054      0.000         5.600     5.673
+volatile_acidity    -1.7614      0.104    -16.954      0.000        -1.965    -1.558
+==============================================================================
+Omnibus:                       20.577   Durbin-Watson:                   1.736
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               21.905
+Skew:                           0.242   Prob(JB):                     1.75e-05
+Kurtosis:                       3.306   Cond. No.                         5.59
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+White
+mean of the volatile acidity variable =  0.278241118824
+mean of the volatile acidity variable after normalization =  -1.07128701808e-15
+
+OLS regression model for the association between the amount of volatile acidity in wine and the quality of wine:
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.038
+Model:                            OLS   Adj. R-squared:                  0.038
+Method:                 Least Squares   F-statistic:                     193.0
+Date:                Mon, 06 Jun 2016   Prob (F-statistic):           4.67e-43
+Time:                        15:43:17   Log-Likelihood:                -6260.0
+No. Observations:                4898   AIC:                         1.252e+04
+Df Residuals:                    4896   BIC:                         1.254e+04
+Df Model:                           1
+Covariance Type:            nonrobust
+====================================================================================
+                       coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------------
+Intercept            5.8779      0.012    473.506      0.000         5.854     5.902
+volatile_acidity    -1.7109      0.123    -13.891      0.000        -1.952    -1.469
+==============================================================================
+Omnibus:                       76.271   Durbin-Watson:                   1.646
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               84.657
+Skew:                           0.268   Prob(JB):                     4.14e-19
+Kurtosis:                       3.357   Cond. No.                         9.92
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
