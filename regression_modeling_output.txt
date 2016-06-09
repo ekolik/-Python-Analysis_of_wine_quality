@@ -60,3 +60,68 @@ Kurtosis:                       3.357   Cond. No.                         9.92
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Red
+OLS multivariate regression model
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.348
+Model:                            OLS   Adj. R-squared:                  0.346
+Method:                 Least Squares   F-statistic:                     170.3
+Date:                Thu, 09 Jun 2016   Prob (F-statistic):          2.66e-145
+Time:                        12:19:24   Log-Likelihood:                -1584.3
+No. Observations:                1599   AIC:                             3181.
+Df Residuals:                    1593   BIC:                             3213.
+Df Model:                           5
+Covariance Type:            nonrobust
+====================================================================================
+                       coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------------
+Intercept            5.6360      0.016    345.158      0.000         5.604     5.668
+volatile_acidity    -1.0687      0.101    -10.594      0.000        -1.267    -0.871
+chlorides           -1.9288      0.400     -4.818      0.000        -2.714    -1.143
+pH                  -0.4173      0.117     -3.575      0.000        -0.646    -0.188
+sulphates            0.8474      0.110      7.675      0.000         0.631     1.064
+alcohol              0.3055      0.017     18.383      0.000         0.273     0.338
+==============================================================================
+Omnibus:                       18.512   Durbin-Watson:                   1.734
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               26.655
+Skew:                          -0.113   Prob(JB):                     1.63e-06
+Kurtosis:                       3.591   Cond. No.                         26.4
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+White
+OLS multivariate regression model
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.250
+Model:                            OLS   Adj. R-squared:                  0.249
+Method:                 Least Squares   F-statistic:                     325.9
+Date:                Thu, 09 Jun 2016   Prob (F-statistic):          4.08e-302
+Time:                        12:19:31   Log-Likelihood:                -5650.4
+No. Observations:                4898   AIC:                         1.131e+04
+Df Residuals:                    4892   BIC:                         1.135e+04
+Df Model:                           5
+Covariance Type:            nonrobust
+====================================================================================
+                       coef    std err          t      P>|t|      [95.0% Conf. Int.]
+------------------------------------------------------------------------------------
+Intercept            5.8779      0.011    536.033      0.000         5.856     5.899
+volatile_acidity    -2.0437      0.110    -18.554      0.000        -2.260    -1.828
+density             36.8919      5.941      6.209      0.000        25.244    48.540
+pH                   0.1822      0.074      2.457      0.014         0.037     0.328
+sulphates            0.3162      0.098      3.230      0.001         0.124     0.508
+alcohol              0.3925      0.014     27.137      0.000         0.364     0.421
+==============================================================================
+Omnibus:                       91.867   Durbin-Watson:                   1.623
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              188.456
+Skew:                           0.038   Prob(JB):                     1.19e-41
+Kurtosis:                       3.958   Cond. No.                         667.
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
