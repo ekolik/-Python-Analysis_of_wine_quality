@@ -3,6 +3,7 @@ import seaborn
 import matplotlib.pyplot as plt
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
+import numpy
 
 red = pd.read_csv('winequality-red.csv', low_memory=False, sep=';')
 white = pd.read_csv('winequality-white.csv', low_memory=False, sep=';')
@@ -100,4 +101,61 @@ def mult_regression(wine_set):
     figure1 = sm.graphics.influence_plot(results1, size=8)
     plt.show()
 
-call(mult_regression)
+# call(mult_regression)
+
+
+# ____________________________ Logistic Regression _____________________
+
+def log_regression(wine_set):
+    # # examining the data before recoding
+    # print(wine_set["sulphates"].describe())
+    # wine_set["sulphates_c"] = pd.qcut(wine_set["sulphates"], 4)
+    # print(wine_set.groupby("sulphates_c").size())
+    # print()
+    # #
+    # print(wine_set["alcohol"].describe())
+    # wine_set["alcohol_c"] = pd.qcut(wine_set["alcohol"], 4)
+    # print(wine_set.groupby("alcohol_c").size())
+    # print()
+    #
+    # print(wine_set["quality"].describe())
+    # wine_set["quality_c"] = pd.qcut(wine_set["quality"], 3)
+    # print(wine_set.groupby("quality_c").size())
+    # print()
+
+
+    # recode quality into 2 groups: 0:{3,4,5}, 1:{6,7,8,9}
+    recode = {3: 0, 4: 0, 5:0, 6:0, 7:1, 8:1, 9:1}
+    wine_set['quality_c'] = wine_set['quality'].map(recode)
+
+    # recode sulphates into 2 groups: 0: <= mean, 1: > mean
+    def sulphates_to_cat(x):
+       if x['sulphates'] <= wine_set['sulphates'].mean():
+          return 0
+       else:
+          return 1
+    wine_set['sulphates_c'] = wine_set.apply(lambda x: sulphates_to_cat(x), axis=1)
+
+    # recode alcohol into 2 groups: 0: <= mean , 1: > mean
+    def alcohol_to_cat(x):
+       if x['alcohol'] <= wine_set['alcohol'].mean():
+          return 0
+       else:
+          return 1
+    wine_set['alcohol_c'] = wine_set.apply(lambda x: alcohol_to_cat(x), axis=1)
+    # print(wine_set.head(10))
+
+    # logistic regression for sulphates+alcohol -> quality
+    print ("Logistic regression model for the association between wine's quality and sulphates&alcohol")
+    model1 = smf.logit(formula="quality_c ~ sulphates_c + alcohol_c", data=wine_set)
+    results1 = model1.fit()
+    print(results1.summary())
+
+    # odds ratios with 95% confidence intervals
+    print("\nConfidence intervals")
+    conf = results1.conf_int()
+    conf['Odds ratio'] = results1.params
+    conf.columns = ['Lower conf.int.', 'Upper conf.int.', 'Odds ratio']
+    print(numpy.exp(conf))
+
+call(log_regression)

@@ -125,3 +125,66 @@ Kurtosis:                       3.958   Cond. No.                         667.
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+
+Red
+Logistic regression model for the association between wine's quality and sulphates&alcohol
+Optimization terminated successfully.
+         Current function value: 0.309742
+         Iterations 8
+                           Logit Regression Results
+==============================================================================
+Dep. Variable:              quality_c   No. Observations:                 1599
+Model:                          Logit   Df Residuals:                     1596
+Method:                           MLE   Df Model:                            2
+Date:                Thu, 16 Jun 2016   Pseudo R-squ.:                  0.2200
+Time:                        16:27:55   Log-Likelihood:                -495.28
+converged:                       True   LL-Null:                       -634.96
+                                        LLR p-value:                 2.171e-61
+===============================================================================
+                  coef    std err          z      P>|z|      [95.0% Conf. Int.]
+-------------------------------------------------------------------------------
+Intercept      -4.0398      0.217    -18.607      0.000        -4.465    -3.614
+sulphates_c     1.3845      0.173      7.990      0.000         1.045     1.724
+alcohol_c       2.2261      0.211     10.564      0.000         1.813     2.639
+===============================================================================
+
+Confidence intervals
+             Lower conf.int.  Upper conf.int.  Odds ratio
+Intercept           0.011501         0.026937    0.017601
+sulphates_c         2.843148         5.607741    3.992948
+alcohol_c           6.129303        14.000459    9.263534
+
+[3 rows x 3 columns]
+
+
+White
+Logistic regression model for the association between wine's quality and sulphates&alcohol
+Optimization terminated successfully.
+         Current function value: 0.462412
+         Iterations 6
+                           Logit Regression Results
+==============================================================================
+Dep. Variable:              quality_c   No. Observations:                 4898
+Model:                          Logit   Df Residuals:                     4895
+Method:                           MLE   Df Model:                            2
+Date:                Thu, 16 Jun 2016   Pseudo R-squ.:                  0.1147
+Time:                        16:27:56   Log-Likelihood:                -2264.9
+converged:                       True   LL-Null:                       -2558.4
+                                        LLR p-value:                3.447e-128
+===============================================================================
+                  coef    std err          z      P>|z|      [95.0% Conf. Int.]
+-------------------------------------------------------------------------------
+Intercept      -2.3937      0.077    -31.049      0.000        -2.545    -2.243
+sulphates_c     0.1990      0.074      2.679      0.007         0.053     0.345
+alcohol_c       1.7924      0.080     22.379      0.000         1.635     1.949
+===============================================================================
+
+Confidence intervals
+             Lower conf.int.  Upper conf.int.  Odds ratio
+Intercept           0.078488         0.106181    0.091290
+sulphates_c         1.054847         1.411418    1.220176
+alcohol_c           5.131542         7.024243    6.003765
+
+[3 rows x 3 columns]
