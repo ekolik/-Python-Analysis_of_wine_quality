@@ -124,7 +124,7 @@ def log_regression(wine_set):
     # print()
 
 
-    # recode quality into 2 groups: 0:{3,4,5}, 1:{6,7,8,9}
+    # recode quality into 2 groups: 0:{3,4,5,6}, 1:{7,8,9}
     recode = {3: 0, 4: 0, 5:0, 6:0, 7:1, 8:1, 9:1}
     wine_set['quality_c'] = wine_set['quality'].map(recode)
 
