@@ -54,3 +54,20 @@ To sum up the results of the multiple regression modeling, the following observa
 * Volatile acidity is negatively associated with the quality of both wine sets, with the regression coefficients less than `-1`.
 * Chlorides is the most influential variable (has the lowest negative coefficient) in negative association with the quality of the red wine, but not influential for the white wine.
 * Fixed acidity, citric acid, residual sugar, free sulfur dioxide, and total sulfur dioxide are variables not significantly associated with the quality of both wines.
+
+### Logistic Regression
+
+Here I examine the association between the amount of sulphates and alcohol in wine (the explanatory variables), and the quality of wine (the response variable) from a perspective of logistic regression. For that, I recode the explanatory and response variables into binary categorical values. I perform the recoding using the following rules: 
+* *categorical quality*: `0` - if the quality of a wine sample is 3, 4, 5, or 6, `1` - if 7, 8, or 9;
+* *categorical sulphates*: `0` - if the amount of sulphates in a wine sample is lower that the mean amount of sulphates in all samples, `1` - if higher;
+* *categorical alcohol*: `0` - if the amount of alcohol in a wine sample is lower that the mean amount of alcohol in all samples, `1` - if higher.
+
+After recoding the variables I train the logistic regression model and calculate the confidence intervals for the explanatory variables. I perform this procedure separately on both wine sets (red and white).
+
+The results of the logistic regression model for the **red** wine tell us that both of the explanatory variables are positively and significantly (both p-values = 0) associated with the response variable. None of these variables is a confounder. We can say that, after adjusting for the *sulphates* variable, wine samples with higher than the mean amount of alcohol are 9.26 times more likely to have high (>= 7) quality mark (`Odds ratio = 9.263534, 95% CI = [6.129303, 14.000459]`). Similarly, after adjusting for the *alcohol* variable, wine samples with higher than the mean amount of sulphates are 3.99 times more likely to have high (>= 7) quality mark (`Odds ratio = 3.992948, 95% CI = [2.843148, 5.607741]`).
+
+The results of the logistic regression model for the **white** wine tell us that both of the explanatory variables are positively and significantly (sulphates p-value = 0.007, alcohol p-value = 0) associated with the response variable. None of these variables is a confounder. We can say that, after adjusting for the *sulphates* variable, wine samples with higher than the mean amount of alcohol are 6.00 times more likely to have high (>= 7) quality mark (`Odds ratio = 6.003765, 95% CI = [5.131542, 7.024243]`). Similarly, after adjusting for the *alcohol* variable, wine samples with higher than the mean amount of sulphates are 1.22 times more likely to have high (>= 7) quality mark (`Odds ratio = 1.220176, 95% CI = [1.054847, 1.411418]`).
+
+Therefore, the results show that, for both wines, the sulphates and alcohol variables are positively associated with the quality variable. Moreover, for both wines, the alcohol variable is stronger associated with the quality variable since it has higher regression coefficient and odds ratio than the sulphates variable.
+
+The work is continued in the [Machine Learning]() section.
