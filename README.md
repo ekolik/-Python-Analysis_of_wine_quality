@@ -1,5 +1,5 @@
 # -Python-Ahalysis_of_wine_quality
-Analysis of the Wine Quality Data Set from the UCI Machine Learning Repository. This project has the same structure as [The Distribution of craters on Mars Project](https://github.com/ekolik/-Python-Distribution_of_craters_on_Mars).
+Analysis of the Wine Quality Data Set from the UCI Machine Learning Repository. This project has the same structure as the [Distribution of craters on Mars](https://github.com/ekolik/-Python-Distribution_of_craters_on_Mars) project.
 
 ## Data
 The two data sets containing physicochemical and sensory characteristics of red and white variants of the Portuguese "Vinho Verde" wine were taken from [the UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Wine+Quality). These data sets are the courtesy of [Paulo Cortez](http://www3.dsi.uminho.pt/pcortez/wine/).
