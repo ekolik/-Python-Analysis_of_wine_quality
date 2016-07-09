@@ -31,13 +31,15 @@ def decis_tree(wine_set):
     w = wine_set
 
     # subset data for better tree visibility
-    wine_set = wine_set[:100]
+    # wine_set = wine_set[:100]
+
     # recode quality (response variable) into 2 groups: 0:{3,4,5}, 1:{6,7,8,9}
     recode = {3: 0, 4: 0, 5:0, 6:1, 7:1, 8:1, 9:1}
     wine_set['quality_c'] = wine_set['quality'].map(recode)
+
     # round explanatory data for easier tree
-    wine_set["residual_sugar"] = wine_set["residual_sugar"].round()
-    wine_set["alcohol"] = wine_set["alcohol"].round()
+    # wine_set["residual_sugar"] = wine_set["residual_sugar"].round()
+    # wine_set["alcohol"] = wine_set["alcohol"].round()
 
     # split into training and testing sets
     predictors = wine_set[["residual_sugar", 'alcohol']]
