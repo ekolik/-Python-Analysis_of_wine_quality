@@ -70,4 +70,4 @@ The results of the logistic regression model for the **white** wine tell us that
 
 Therefore, the results show that, for both wines, the sulphates and alcohol variables are positively associated with the quality variable. Moreover, for both wines, the alcohol variable is stronger associated with the quality variable since it has higher regression coefficient and odds ratio than the sulphates variable.
 
-The work is continued in the [Machine Learning]() section.
+The work is continued in the [Machine Learning](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/Machine_learning.md) section.
