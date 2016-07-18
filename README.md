@@ -21,15 +21,15 @@ There are 1599 samples of red wine and 4898 samples of white wine in the data se
 
 
 
-## Approach and work flow
-By the means of data management, visualization, analysis, regression modeling, and machine learning, I establish the relationships and correlations between the wine characteristics. 
+## Goals and work flow
+By the means of data management, visualization, analysis, regression modeling, and machine learning, I explore the relationships and correlations between the wine characteristics and its quality score. The main focus of this work is to try different predictive algorithms on the data and examine the resutls. 
 
 The work flows through the following sections:
 
 1. [Data management and visualization](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Data_management_and_visualization.md)
 2. [Data analysis](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Data_analysis.md)
 3. [Regression modeling](https://github.com/ekolik/-Python-Ahalysis_of_wine_quality/blob/master/Regression_modeling.md)
-4. [Machine learning]()
+4. [Machine learning](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/Machine_learning.md)
 
 ## Recources
 * P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.
