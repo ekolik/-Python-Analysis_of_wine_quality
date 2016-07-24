@@ -78,3 +78,155 @@ Mean squared error for test data: 0.538729476636
 
 R-square for training data: 0.27849515947
 R-square for test data: 0.281659015533
+
+
+
+----------------K-Means Cluster Analysis------------------------
+Red
+Average distance from observations to the cluster centroids for 1-9 clusters:
+[3.0585488274384658, 2.7287733562156844, 2.5411890379236173, 2.4449649082228251, 2.3127019849664592, 2.2539856679710164, 2.164591940092619, 2.1187545342719738, 2.0666468716545534]
+
+Counts of observations per each cluster:
+0    706
+1    413
+dtype: int64
+
+Clustering variable means by cluster:
+              index   density   alcohol  sulphates        pH  \
+cluster
+0        843.820113 -0.301767 -0.131174  -0.324514  0.357958
+1        703.440678  0.555810  0.151918   0.582051 -0.712089
+
+         volatile_acidity  chlorides  fixed_acidity  citric_acid  \
+cluster
+0                0.348789  -0.153544      -0.519408    -0.556554
+1               -0.671593   0.294584       0.949144     0.994521
+
+         residual_sugar  free_sulfur_dioxide  total_sulfur_dioxide
+cluster
+0             -0.118829             0.190626              0.160390
+1              0.214773            -0.218085             -0.199256
+
+[2 rows x 12 columns]
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.052
+Model:                            OLS   Adj. R-squared:                  0.051
+Method:                 Least Squares   F-statistic:                     61.10
+Date:                Sun, 24 Jul 2016   Prob (F-statistic):           1.25e-14
+Time:                        11:56:37   Log-Likelihood:                -1325.4
+No. Observations:                1119   AIC:                             2655.
+Df Residuals:                    1117   BIC:                             2665.
+Df Model:                           1
+Covariance Type:            nonrobust
+===================================================================================
+                      coef    std err          t      P>|t|      [95.0% Conf. Int.]
+-----------------------------------------------------------------------------------
+Intercept           5.5028      0.030    184.681      0.000         5.444     5.561
+C(cluster)[T.1]     0.3834      0.049      7.816      0.000         0.287     0.480
+==============================================================================
+Omnibus:                        7.925   Durbin-Watson:                   1.937
+Prob(Omnibus):                  0.019   Jarque-Bera (JB):               10.028
+Skew:                           0.079   Prob(JB):                      0.00664
+Kurtosis:                       3.436   Cond. No.                         2.42
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Means for wine quality by cluster:
+          quality
+cluster
+0        5.502833
+1        5.886199
+
+[2 rows x 1 columns]
+
+Standard deviations for wine quality by cluster:
+          quality
+cluster
+0        0.746143
+1        0.864133
+
+[2 rows x 1 columns]
+Multiple Comparison of Means - Tukey HSD,FWER=0.05
+===========================================
+group1 group2 meandiff lower  upper  reject
+-------------------------------------------
+  0      1     0.3834  0.2871 0.4796  True
+-------------------------------------------
+
+
+White
+Average distance from observations to the cluster centroids for 1-9 clusters:
+[3.1391849212070877, 2.7544998464309329, 2.6805242845919039, 2.5607655855879807, 2.4707398891077523, 2.4105646192770318, 2.3524868707750137, 2.3071620184535471, 2.2625259269509206]
+
+Counts of observations per each cluster:
+0    2048
+1    1380
+dtype: int64
+
+Clustering variable means by cluster:
+               index   density   alcohol  sulphates        pH  \
+cluster
+0        2594.895508 -0.635381  0.522973  -0.032419  0.132948
+1        2253.144203  0.951774 -0.804008   0.054619 -0.219371
+
+         volatile_acidity  chlorides  fixed_acidity  citric_acid  \
+cluster
+0               -0.020362  -0.263450      -0.124362    -0.157549
+1                0.062030   0.428172       0.178366     0.255498
+
+         residual_sugar  free_sulfur_dioxide  total_sulfur_dioxide
+cluster
+0             -0.565557            -0.394347             -0.510612
+1              0.842960             0.601230              0.751702
+
+[2 rows x 12 columns]
+                            OLS Regression Results
+==============================================================================
+Dep. Variable:                quality   R-squared:                       0.060
+Model:                            OLS   Adj. R-squared:                  0.060
+Method:                 Least Squares   F-statistic:                     219.8
+Date:                Sun, 24 Jul 2016   Prob (F-statistic):           3.08e-48
+Time:                        11:56:53   Log-Likelihood:                -4372.7
+No. Observations:                3428   AIC:                             8749.
+Df Residuals:                    3426   BIC:                             8762.
+Df Model:                           1
+Covariance Type:            nonrobust
+===================================================================================
+                      coef    std err          t      P>|t|      [95.0% Conf. Int.]
+-----------------------------------------------------------------------------------
+Intercept           6.0576      0.019    316.302      0.000         6.020     6.095
+C(cluster)[T.1]    -0.4475      0.030    -14.825      0.000        -0.507    -0.388
+==============================================================================
+Omnibus:                       12.751   Durbin-Watson:                   2.001
+Prob(Omnibus):                  0.002   Jarque-Bera (JB):               16.592
+Skew:                           0.006   Prob(JB):                     0.000249
+Kurtosis:                       3.341   Cond. No.                         2.45
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Means for wine quality by cluster:
+          quality
+cluster
+0        6.057617
+1        5.610145
+
+[2 rows x 1 columns]
+
+Standard deviations for wine quality by cluster:
+          quality
+cluster
+0        0.924930
+1        0.772186
+
+[2 rows x 1 columns]
+Multiple Comparison of Means - Tukey HSD,FWER=0.05
+=============================================
+group1 group2 meandiff  lower   upper  reject
+---------------------------------------------
+  0      1    -0.4475  -0.5067 -0.3883  True
+---------------------------------------------
