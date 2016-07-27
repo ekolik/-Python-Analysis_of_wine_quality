@@ -57,3 +57,36 @@ Not all predictor variables were retained in the selected models. For the red wi
 For the white wine, `citric acid` and `fixed acidity` variables received zero coefficients, and therefore do not participate in the prediction. The results of the training indicate the `alcohol`, `residual sugar`, `density`, and `volatile acidity` variables as the most strongly associated with the quality of wine and, therefore, the most influential for the prediction. Interestingly, this results similar to the ones of [random forests analysis](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/Machine_learning.md#random-forests) and [multivariate regression](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/Regression_modeling.md#multiple-regression). Mean squared error and R-squared values prove the model being robust for testing on new examples. The predictors account for 28% of the variance in the target variable.
 
 We can see that for the white wine the predictive algorithms are more unanimous in the selection of most influential predictors than they are for red.
+
+### K-Means Cluster Analysis
+
+A K-means cluster analysis was conducted to identify underlying subgroups of wine samples based on their characteristics (quantitative clustering variables): density, alcohol, sulphates, pH, volatile acidity, chlorides, fixed acidity,
+citric acid, residual sugar, free sulfur dioxide, and total sulfur dioxide (i.e., all available characteristics, expect the wine quality). Analysis was performed for each wine set (red and white) separately. All the variables were standardized to have a mean of 0 and a standard deviation of 1.
+
+Data were randomly split into a training set (70%) and a test set (30% of the observations). A series of k-means cluster analyses were conducted on the training set specifying k=1-9 clusters, using Euclidean distance. The average distance from observations to the cluster centroids was plotted for each of the nine cluster solutions in an elbow curve to provide guidance for choosing the number of clusters to interpret.
+
+**Red** wine:
+![](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/red_kmeans_elbow.png)
+
+**White** wine:
+![](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/white_kmeans_elbow.png)
+
+The elbow curves for both wine sets were inconclusive, suggesting that the 2, 3, 5, and 7-cluster solutions might be interpreted. To choose the best solution, canonical discriminant analyses were further performed for each solution.
+
+Canonical discriminant analysis reduces the 11 clustering variables down to 2 canonical variables that account for most of the variance in the clustering variables. After plotting the canonical variables for each 1-9 cluster solution, the 2-cluster solution was chosen as the one that splits the data in the best way. For the white wine, the plot for 2-cluster solution indicates that the observations in the clusters are densely packed with relatively low within cluster variances, and the clusters don't overlap with each other. For the red wine, the observations in each of the 2 clusters have greater spread suggesting higher within cluster variance, but the clusters also don't overlap with each other.
+
+**Red** wine:
+![](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/red_2clusters.png)
+
+**White** wine:
+![](https://github.com/ekolik/-Python-Analysis_of_wine_quality/blob/master/white_2clusters.png)
+
+For the red wine, the means of the clustering variables show that, the samples in the first cluster, on average, have higher values of pH, volatile acidity, free sulfur dioxide, and total sulfur dioxide than the samples in the second cluster. Mean values of all other clustering variables in the first cluster are lower than in the second. 
+
+For the white wine, the means of the clustering variables show that, the samples in the first cluster, on average, have higher values of alcohol and pH than the samples in the second cluster. Mean values of all other clustering variables in the first cluster are lower than in the second. 
+
+In order to externally validate the clusters, an Analysis of Variance (ANOVA) was conducted to test for significant differences between the clusters on the quality of wine:
+* For the red wine, results indicated significant differences between the clusters on the wine quality (`F(1, 1117) = 61.10, p = 1.25e-14`). The Tukey post hoc comparisons also showed significant differences between two clusters on the wine quality. Samples in the first cluster have lower quality (`mean = 5.502833, std = 0.746143`) than the samples in the second cluster (`mean = 5.886199, std = 0.864133`).
+* For the white wine, results also indicated significant differences between the clusters on the wine quality (`F(1, 3426) = 219.8, p = 3.08e-48`). The Tukey post hoc comparisons also showed significant differences between two clusters on the wine quality. Samples in the first cluster have higher quality (`mean = 6.057617, std = 0.924930`) than the samples in the second cluster (`mean = 5.610145, std = 0.772186`).
+
+
